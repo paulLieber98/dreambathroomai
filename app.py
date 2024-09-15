@@ -9,7 +9,8 @@ app = Flask(__name__)
 # Load the model (once at startup)
 model_id = "CompVis/stable-diffusion-v1-4"
 pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
-pipe = pipe.to("cpu")
+#pipe = pipe.to("cpu")
+pipe = pipe.to("cuda") # gpu
 
 @app.route('/generate', methods=['POST'])
 def generate_image():
