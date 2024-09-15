@@ -1,39 +1,38 @@
-from flask import Flask, request, jsonify, send_file
+from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 from diffusers import StableDiffusionPipeline
 import torch
-from PIL import Image
-import io
+import base64
+from io import BytesIO
 
 app = Flask(__name__)
+CORS(app)
 
-# Load the model (once at startup)
-model_id = "CompVis/stable-diffusion-v1-4"
-pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16)
-pipe = pipe.to("cpu")
+# Load the model (adjust path as needed)
+model = StableDiffusionPipeline.from_pretrained("runwayml/stable-diffusion-v1-5", torch_dtype=torch.float16)
+model.to("cuda" if torch.cuda.is_available() else "cpu")
 
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route('/generate', methods=['POST'])
 def generate_image():
-    data = request.json
-    prompt = data.get('prompt', '')
-
-    if not prompt:
-        return jsonify({"error": "Prompt is required"}), 400
-
-    # Generate the image
-    image = pipe(prompt).images[0]
-
-    # Convert to binary for sending over HTTP
-    img_byte_arr = io.BytesIO()
-    image.save(img_byte_arr, format='PNG')
-    img_byte_arr = img_byte_arr.getvalue()
-
-    return send_file(
-        io.BytesIO(img_byte_arr),
-        mimetype='image/png',
-        as_attachment=False,
-        download_name='generated_image.png'
-    )
+    try:
+        data = request.json
+        prompt = data['prompt']
+        
+        # Generate image
+        image = model(prompt).images[0]
+        
+        # Convert image to base64
+        buffered = BytesIO()
+        image.save(buffered, format="PNG")
+        img_str = base64.b64encode(buffered.getvalue()).decode()
+        
+        return jsonify({"status": "success", "image": img_str})
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
