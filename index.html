@@ -3,29 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DreamBathroomAI</title>
-    <link rel="stylesheet" href="style.css">
+    <title>This House Does Not Exist</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <header>
-        <h1>DreamBathroomAI</h1>
-        <p>Generate luxurious and modern bathroom designs with AI.</p>
-    </header>
-    
-    <main>
-        <div class="container">
-            <input type="text" id="prompt" placeholder="Enter a prompt for bathroom design" />
-            <button id="generateButton">Generate Image</button>
-        </div>
-        <div class="output">
-            <img id="generatedImage" src="" alt="Generated Bathroom Image" />
-        </div>
-    </main>
-
-    <footer>
-        <p>Paul Lieber</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <h1>This House Does Not Exist</h1>
+    <div id="input-container">
+        <input type="text" id="prompt" placeholder="Enter a prompt for the house">
+        <button onclick="generateImage()">Generate</button>
+    </div>
+    <div id="image-container">
+        <img id="generated-image" src="" alt="Generated House">
+    </div>
+    <script>
+        function generateImage() {
+            const prompt = document.getElementById('prompt').value;
+            fetch('/generate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ prompt: prompt }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    document.getElementById('generated-image').src = 'data:image/png;base64,' + data.image;
+                } else {
+                    alert('Error: ' + data.message);
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
 </body>
 </html>
