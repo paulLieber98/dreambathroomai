@@ -1,3 +1,5 @@
+const backendUrl = 'https://your-backend-url.com/generate';  // Change this to your actual backend URL
+
 document.getElementById('generateButton').addEventListener('click', async () => {
     const prompt = document.getElementById('prompt').value;
 
@@ -10,8 +12,8 @@ document.getElementById('generateButton').addEventListener('click', async () => 
     document.getElementById('generateButton').textContent = 'Generating...';
 
     try {
-        // Fetch the generated image from your backend (to be set up with API)
-        const response = await fetch('/generate', {
+        // Fetch image from the backend
+        const response = await fetch(backendUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
