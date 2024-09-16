@@ -3,18 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dream bathroom AI</title>
+    <title>Dream Bathroom AI</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <h1>dream bathroom AI</h1>
-    <div id="input-container">
-        <input type="text" id="prompt" placeholder="Enter a prompt for the bathroom">
-        <button onclick="generateImage()">Generate</button>
+    <header>
+        <nav>
+            <a href="#">Dream Bathroom AI</a>
+            <a href="#">Generate</a>
+        </nav>
+    </header>
+
+    <div id="main-content">
+        <div class="image-section">
+            <img id="generated-image" src="" alt="Generated bathroom">
+        </div>
+
+        <div id="input-container">
+            <input type="text" id="prompt" placeholder="Enter a prompt for the bathroom">
+            <button onclick="generateImage()">Generate</button>
+        </div>
+
+        <div id="description-container">
+            <h2>A Modern Luxurious Bathroom</h2>
+            <p>This bathroom is designed with a blend of luxury and simplicity. The space features natural stone and wood accents, perfect for a calm, rejuvenating experience. The sleek, modern fixtures complete the elegant atmosphere.</p>
+        </div>
     </div>
-    <div id="image-container">
-        <img id="generated-image" src="" alt="Generated bathroom">
-    </div>
+
     <script>
         function generateImage() {
             const prompt = document.getElementById('prompt').value;
