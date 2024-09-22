@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Bathroom AI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        img {
+            max-width: 90%;
+            height: auto;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dream Bathroom AI</h1>
+    <p>Click on the image to see another dream bathroom.</p>
+    <img id="bathroom-image" src="images/image_0.png" alt="Generated Bathroom Image">
+    
+    <script>
+        // JavaScript code to change the image when clicked
+        const images = [
+            'images/image_0.png',
+            'images/image_1.png',
+            'images/image_2.png',
+            'images/image_3.png',
+            'images/image_4.png',
+            'images/image_5.png',
+            'images/image_6.png',
+            'images/image_7.png',
+            'images/image_8.png',
+            'images/image_9.png'
+        ];
+
+        const imgElement = document.getElementById('bathroom-image');
+
+        imgElement.addEventListener('click', () => {
+            // Generate a random index
+            const randomIndex = Math.floor(Math.random() * images.length);
+            // Set the image source to the new random image
+            imgElement.src = images[randomIndex];
+        });
+    </script>
+</body>
+</html>
