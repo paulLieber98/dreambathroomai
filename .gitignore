@@ -1,0 +1,7 @@
+# Ignore model files
+model/
+*.ckpt
+*.pt
+
+# Ignore virtual environment
+venv/
