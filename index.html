@@ -2,27 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dream Bathroom AI</title>
-
-
-<!-- index.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dream Bathroom AI</title>
     <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="styles/style.css">    
-
-
-
-    
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Meta tags for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <h1>Dream Bathroom AI</h1>
-    <p>Click the image to let AI generate a new bathroom</p>
-    <img id="bathroom-image" src="images/image_0.png" alt="Generated Bathroom Image">
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#">DreamBathroomAI</a></li>
+            <!-- Add more links if needed -->
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main>
+        <h1>Dream Bathroom AI</h1>
+        <p id="image-id">Image ID: <span id="image-id-number"></span></p>
+        <img id="bathroom-image" src="" alt="Generated Bathroom Image">
+        <p>Click on the image to see another dream bathroom.</p>
+    </main>
+
+    <!-- Include external JavaScript file -->
+    <script src="scripts/script.js"></script>
 </body>
 </html>
