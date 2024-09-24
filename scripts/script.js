@@ -14,9 +14,8 @@ const images = [
     'images/image_9.png'
 ];
 
-// Get references to DOM elements
+// Get reference to the image element
 const imgElement = document.getElementById('bathroom-image');
-const imageIdElement = document.getElementById('image-id-number');
 
 // Function to generate a random image
 function generateRandomImage() {
@@ -29,11 +28,9 @@ function generateRandomImage() {
         const randomIndex = Math.floor(Math.random() * images.length);
         // Update the image source
         imgElement.src = images[randomIndex];
-        // Update the image ID
-        imageIdElement.textContent = randomIndex + 1; // IDs starting from 1
         // Remove 'hidden' class to fade in
         imgElement.classList.remove('hidden');
-    }, 500); // Duration should match the CSS transition duration
+    }, 200); // Duration matches the CSS transition duration
 }
 
 // Event listener for image click
