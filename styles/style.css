@@ -71,11 +71,7 @@ main p {
     cursor: pointer;
     border: 5px solid #ffffff;
     border-radius: 10px;
-    transition: opacity 0.2s ease-in-out; /* Quicker fade duration */
-}
-
-.hidden {
-    opacity: 0;
+    /* Removed transition for fading effect */
 }
 
 /* Footer styling */
@@ -86,12 +82,17 @@ footer {
     padding: 10px;
 }
 
-footer a {
-    color: #ffffff;
-    text-decoration: none;
+footer p {
+    font-size: 16px;
+    text-transform: lowercase;
 }
 
-footer a:hover {
+footer p a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+footer p a:hover {
     text-decoration: underline;
 }
 
@@ -109,3 +110,4 @@ footer a:hover {
         font-size: 16px;
     }
 }
+
