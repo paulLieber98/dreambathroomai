@@ -17,20 +17,17 @@ const images = [
 // Get reference to the image element
 const imgElement = document.getElementById('bathroom-image');
 
-// Function to generate a random image
-function generateRandomImage() {
-    // Add 'hidden' class to start fade-out effect
-    imgElement.classList.add('hidden');
+let previousIndex = -1;
 
-    // Wait for the transition to complete
-    setTimeout(() => {
-        // Generate a random index
-        const randomIndex = Math.floor(Math.random() * images.length);
-        // Update the image source
-        imgElement.src = images[randomIndex];
-        // Remove 'hidden' class to fade in
-        imgElement.classList.remove('hidden');
-    }, 200); // Duration matches the CSS transition duration
+// Function to generate a random image that is different from the previous one
+function generateRandomImage() {
+    let randomIndex;
+    do {
+        randomIndex = Math.floor(Math.random() * images.length);
+    } while (randomIndex === previousIndex);
+    previousIndex = randomIndex;
+    // Update the image source
+    imgElement.src = images[randomIndex];
 }
 
 // Event listener for image click
