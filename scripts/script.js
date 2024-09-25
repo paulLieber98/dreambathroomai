@@ -14,13 +14,10 @@ const images = [
     'images/image_9.png'
 ];
 
-// Get references to DOM elements
+// Get reference to the image element
 const imgElement = document.getElementById('bathroom-image');
-const upvoteButton = document.getElementById('upvote-button');
-const upvoteCountElement = document.getElementById('upvote-count');
 
 let previousIndex = -1;
-let upvoteCount = 0;
 
 // Function to generate a random image that is different from the previous one
 function generateRandomImage() {
@@ -31,19 +28,10 @@ function generateRandomImage() {
     previousIndex = randomIndex;
     // Update the image source
     imgElement.src = images[randomIndex];
-    // Reset upvote count
-    upvoteCount = 0;
-    upvoteCountElement.textContent = upvoteCount;
 }
 
 // Event listener for image click
 imgElement.addEventListener('click', generateRandomImage);
-
-// Event listener for upvote button
-upvoteButton.addEventListener('click', () => {
-    upvoteCount += 1;
-    upvoteCountElement.textContent = upvoteCount;
-});
 
 // Generate the first random image on page load
 window.onload = generateRandomImage;
