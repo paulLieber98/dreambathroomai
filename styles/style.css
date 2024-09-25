@@ -10,7 +10,7 @@
 /* Body styling */
 body {
     background-color: #1e1e1e; /* Dark background */
-    color: #cccccc; /* Light gray text */
+    color: #898989; /* Light gray text */
     font-family: 'helvetica neue', arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #cccccc;
+    color: #898989;
     text-decoration: none;
     font-size: 18px;
 }
@@ -63,14 +63,14 @@ main p {
     margin: 10px 0;
     font-size: 18px;
     text-transform: lowercase;
-    color: #cccccc;
+    color: #898989;
 }
 
 #bathroom-image {
     max-width: 90%;
     height: auto;
     cursor: pointer;
-    border: 5px solid #cccccc;
+    border: 5px solid #898989;
     border-radius: 10px;
 }
 
@@ -82,7 +82,7 @@ main p {
 #upvote-button {
     background-color: transparent;
     border: none;
-    color: #cccccc;
+    color: #898989;
     font-size: 18px;
     cursor: pointer;
 }
@@ -103,7 +103,7 @@ main p {
 }
 
 .creator-info a {
-    color: #cccccc;
+    color: #898989;
     text-decoration: underline;
 }
 
