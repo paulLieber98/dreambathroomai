@@ -67,36 +67,13 @@ main p {
 }
 
 #bathroom-image {
-    max-width: 90%;
-    height: auto;
+    width: 800px; /* Fixed width */
+    height: 600px; /* Fixed height */
+    object-fit: cover; /* Ensures images fill the container */
     cursor: pointer;
-    border: 5px solid #898989;
-    border-radius: 10px;
+    /* Removed border and border-radius */
 }
 
-/* Upvote Section Styling */
-.upvote-section {
-    margin: 15px 0;
-}
-
-#upvote-button {
-    background-color: transparent;
-    border: none;
-    color: #898989;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-#upvote-button:hover {
-    text-decoration: underline;
-}
-
-#upvote-count {
-    margin-left: 10px;
-    font-size: 18px;
-}
-
-/* Creator Info Styling */
 .creator-info {
     margin-top: 10px;
     font-size: 16px;
@@ -112,17 +89,19 @@ main p {
 }
 
 /* Responsive design */
+@media (max-width: 800px) {
+    #bathroom-image {
+        width: 90%;
+        height: auto;
+    }
+}
+
 @media (max-width: 600px) {
     main h1 {
         font-size: 28px;
     }
 
     main p,
-    #upvote-button,
-    #upvote-count {
-        font-size: 16px;
-    }
-
     nav ul li a {
         font-size: 16px;
     }
