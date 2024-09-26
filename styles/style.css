@@ -67,8 +67,8 @@ main p {
 }
 
 #bathroom-image {
-    width: 400px; /* Fixed width */
-    height: 300px; /* Fixed height */
+    width: 600px; /* Fixed width */
+    height: 450px; /* Fixed height */
     object-fit: cover; /* Ensures images fill the container */
     cursor: pointer;
     /* Removed border and border-radius */
@@ -89,14 +89,14 @@ main p {
 }
 
 /* Responsive design */
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     #bathroom-image {
         width: 90%;
         height: auto;
     }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 450px) {
     main h1 {
         font-size: 28px;
     }
