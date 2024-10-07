@@ -41,7 +41,17 @@ const images = [
     'images/image_36.png',
     'images/image_37.png',
     'images/image_38.png',
-    'images/image_39.png'
+    'images/image_39.png',
+    'images/image_40.png',
+    'images/image_41.png',
+    'images/image_42.png',
+    'images/image_43.png',
+    'images/image_44.png',
+    'images/image_45.png',
+    'images/image_46.png',
+    'images/image_47.png',
+    'images/image_48.png',
+    'images/image_49.png',
 ];
 
 // Get reference to the image element
