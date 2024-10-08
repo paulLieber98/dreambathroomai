@@ -1,24 +1,48 @@
+/* Import the Inter font for a modern and clean look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+/* Set up the dark theme for the page */
+body {
+    background-color: #121212; /* Very dark background */
+    color: #B0B0B0; /* Light grey text */
+    font-family: 'Inter', sans-serif; /* Apply the Inter font */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
 /* Navigation bar styling */
 nav ul {
     list-style-type: none;
+    padding: 10px;
+    background-color: #1C1C1C; /* Darker background for navigation */
 }
 
 nav ul li a {
     text-decoration: none;
-    color: black;
+    color: #B0B0B0; /* Light grey text for links */
+    font-weight: 600; /* Bold for emphasis */
 }
 
-/* Spacing before blog section to force scroll */
-.spacer {
-    height: 300px; /* Adjust this value to control how much space before the blog appears */
+/* Large spacer to force more scrolling before blog appears */
+.large-spacer {
+    height: 1200px; /* Equivalent to an entire page worth of scrolling */
 }
 
 /* Blog post section styling */
 .blog-post {
     max-width: 800px;  /* Restrict the width of the blog post for better readability */
     margin: 0 auto;    /* Center horizontally */
-    padding: 20px;     /* Add some padding inside */
+    padding: 20px;
     text-align: left;  /* Left align the text */
+}
+
+.blog-post h2 {
+    color: #FFFFFF; /* White color for the headings */
+}
+
+.blog-post p {
+    color: #B0B0B0; /* Light grey for the body text */
 }
 
 /* LinkedIn post centering */
@@ -43,4 +67,10 @@ h1, p {
 
 .creator-info {
     text-align: left; /* Ensure creator info is also left-aligned */
+    color: #B0B0B0;
+}
+
+u {
+    text-decoration: underline;
+    color: #B0B0B0;
 }
