@@ -8,9 +8,9 @@ nav ul li a {
     color: black;
 }
 
-/* Large spacer to force more scrolling before blog appears */
-.large-spacer {
-    height: 1200px; /* Equivalent to an entire page worth of scrolling */
+/* Spacing before blog section to force scroll */
+.spacer {
+    height: 300px; /* Adjust this value to control how much space before the blog appears */
 }
 
 /* Blog post section styling */
