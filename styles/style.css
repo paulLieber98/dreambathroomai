@@ -62,7 +62,7 @@ h1, p {
 
 #bathroom-image {
     display: block;
-    max-width: 832px; /* Adjust the width as needed */
+    max-width: 632px; /* Adjust the width as needed */
     height: auto; /* Maintain aspect ratio */
     margin: 20px auto; /* Center the image */
 }
