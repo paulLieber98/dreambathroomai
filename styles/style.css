@@ -26,7 +26,7 @@ nav ul li a {
 
 /* Large spacer to force more scrolling before blog appears */
 .large-spacer {
-    height: 1200px; /* Equivalent to an entire page worth of scrolling */
+    height: px; /* Equivalent to an entire page worth of scrolling */
 }
 
 /* Blog post section styling */
@@ -62,7 +62,9 @@ h1, p {
 
 #bathroom-image {
     display: block;
-    margin: 20px auto; /* Center the image but keep other text left-aligned */
+    max-width: 500px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px auto; /* Center the image */
 }
 
 .creator-info {
