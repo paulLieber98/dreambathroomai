@@ -3,76 +3,112 @@
 
 /* Set up the dark theme for the page */
 body {
-    background-color: #121212; /* Very dark background */
-    color: #B0B0B0; /* Light grey text */
-    font-family: 'Inter', sans-serif; /* Apply the Inter font */
+    background-color: #121212;
+    color: #B0B0B0;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Navigation bar styling */
-nav ul {
-    list-style-type: none;
-    padding: 10px;
-    background-color: #1C1C1C; /* Darker background for navigation */
+/* Main Content styling */
+main {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-nav ul li a {
+h1 {
+    color: #FFFFFF;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.subtext {
+    color: #B0B0B0;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.image-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #1C1C1C;
+}
+
+#bathroom-image {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.instructions {
+    color: #B0B0B0;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.creator-info {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.creator-info a {
+    color: #B0B0B0;
     text-decoration: none;
-    color: #B0B0B0; /* Light grey text for links */
-    font-weight: 600; /* Bold for emphasis */
-}
-
-/* Large spacer to force more scrolling before blog appears */
-.large-spacer {
-    height: px; /* Equivalent to an entire page worth of scrolling */
+    font-weight: 600;
 }
 
 /* Blog post section styling */
 .blog-post {
-    max-width: 800px;  /* Restrict the width of the blog post for better readability */
-    margin: 0 auto;    /* Center horizontally */
+    background-color: #1C1C1C;
     padding: 20px;
-    text-align: left;  /* Left align the text */
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 40px auto;
 }
 
 .blog-post h2 {
-    color: #FFFFFF; /* White color for the headings */
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
 .blog-post p {
-    color: #B0B0B0; /* Light grey for the body text */
+    color: #B0B0B0;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 /* LinkedIn post centering */
 .linkedin-post {
-    text-align: center; /* Center the LinkedIn iframe */
-    margin-top: 20px;   /* Add some space above the iframe */
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
 }
 
-/* Styling for main content */
-main {
-    padding: 20px; /* Add padding around main content */
+.linkedin-post iframe {
+    border-radius: 8px;
 }
 
-h1, p {
-    text-align: left; /* Ensure main content is left-aligned */
-}
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .image-container, .blog-post {
+        padding: 10px;
+    }
 
-#bathroom-image {
-    display: block;
-    max-width: 732px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin: 20px auto; /* Center the image */
-}
+    h1 {
+        font-size: 1.5rem;
+    }
 
-.creator-info {
-    text-align: left; /* Ensure creator info is also left-aligned */
-    color: #B0B0B0;
-}
-
-u {
-    text-decoration: underline;
-    color: #B0B0B0;
+    .subtext, .instructions, .creator-info, .blog-post p {
+        font-size: 0.9rem;
+    }
 }
